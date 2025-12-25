@@ -1,5 +1,4 @@
 # Automotive-OBD_II-UDS-Security-Framework
----
 
 ## Overview
 
@@ -45,7 +44,7 @@ The lab is designed for learning, testing, and demonstrating:
 - ReadDataByIdentifier (0x22): controlled access to identifiers such as VIN, serial number, and program image
 - WriteDataByIdentifier (0x2E): persistent update of a simulated program image
 - RoutineControl (0x31): example routines including self-test and checksum calculation
-- TesterPresent (0x3E): session keep-alive with S3 timeout enforcemen
+- TesterPresent (0x3E): session keep-alive with S3 timeout enforcement
 
 #### Security Modes and Defensive Behavior for UDS
 
@@ -173,17 +172,41 @@ Provides a reusable ISO-TP communication layer that works with **any TX/RX arbit
 # 1) Create virtual CAN interface 
 sudo modprobe vcan 
 sudo ip link add dev vcan0 type vcan 
-sudo ip link set up vcan0 
+sudo ip link set up vcan0
 
-# 2) Start the ECU (Terminal 1) 
+# 2) Activate virtual environment
+#It is recommended to run the project inside a Python virtual environment to isolate dependencies.
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# 3) Start the ECU (Terminal 1)
+# Runs inside the same virtual environment
 python3 run_ecu.py
 
-# 3) Run Tester (Terminal 2) 
-python3 tester.py
+# 4) Run Tester (Terminal 2)
+#The tester uses global keyboard shortcuts implemented via the keyboard library.
+#On Linux systems, capturing global keyboard events requires elevated privileges.
+#For this reason, the project may need to be executed using sudo -E to preserve the active virtual environment while running with elevated permissions.
+sudo -E /path/to/venv/bin/python3 tester.py
 
-# 4) Run attacker menu (Terminal 3) 
+
+# 5) Run attacker menu (Terminal 3)
+# Runs inside the same virtual environment
 python3 unified_attacks.py 
 
-# 5) Run CanDump (Terminal 4) 
+# 6) Run CanDump (Terminal 4) 
 candump vcan0
+```
+## License
+
+This project is licensed under the MIT License.
+
+You are free to use, modify, and distribute this code for educational or commercial purposes, provided that the original license notice is retained.
+
+## Disclaimer
+
+This project is intended strictly for educational, research, and laboratory use.
+
+Do not use this software against real vehicles, production ECUs, or automotive systems without explicit authorization.  
 
