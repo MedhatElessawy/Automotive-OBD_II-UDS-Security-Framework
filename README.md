@@ -160,19 +160,32 @@ Provides a reusable ISO-TP communication layer that works with **any TX/RX arbit
 
 ## Requirements
 
-- Python 3.x
+- Python 3
 - Linux system with virtual CAN support
 - Dependencies:
   - python-can
   - isotp
+  - keyboard
 
 ---
 
 ## Setup
 
-### 1) Create a virtual CAN interface
 ```bash
-sudo modprobe vcan
-sudo ip link add dev vcan0 type vcan
-sudo ip link set up vcan0
+# 1) Create virtual CAN interface 
+sudo modprobe vcan 
+sudo ip link add dev vcan0 type vcan 
+sudo ip link set up vcan0 
+
+# 2) Start the ECU (Terminal 1) 
+python3 run_ecu.py
+
+# 3) Run Tester (Terminal 2) 
+python3 tester.py
+
+# 4) Run attacker menu (Terminal 3) 
+python3 unified_attacks.py 
+
+# 5) Run CanDump (Terminal 4) 
+candump vcan0
 
