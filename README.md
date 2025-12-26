@@ -200,9 +200,7 @@ candump vcan0
 ```
 ## License
 
-This project is licensed under the MIT License.
-
-You are free to use, modify, and distribute this code for educational or commercial purposes, provided that the original license notice is retained.
+This project is for educational and research purposes only. Use responsibly in controlled lab environments
 
 ## Disclaimer
 
