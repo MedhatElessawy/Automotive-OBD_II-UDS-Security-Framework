@@ -1,8 +1,8 @@
 ```python
 "
 # run_ecu.py
-from obd_ecu import OBDHandler      # Handles OBD requests (modes like 0x01, 0x09)
-from uds_ecu import UDSHandler      # Handles UDS requests (everything else)
+from obd_server import OBDHandler      # Handles OBD requests (modes like 0x01, 0x09)
+from uds_server import UDSHandler      # Handles UDS requests (everything else)
 from transport import tm            # Transport manager: ISO-TP stacks + receive routing
 import config                       # CAN IDs and addressing configuration
 
