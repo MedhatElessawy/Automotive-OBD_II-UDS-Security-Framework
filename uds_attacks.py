@@ -1,5 +1,4 @@
-```python
-"import time                         # Timing: delays, timeouts, brute-force pacing
+import time                         # Timing: delays, timeouts, brute-force pacing
 import config                        # CAN IDs and addressing constants
 import utils                         # Utility helpers (kept for project consistency)
 from transport import tm             # Transport manager: ISO-TP send/receive + queue handling
@@ -438,6 +437,3 @@ def RESER_ECU_SPAMMING(duration_seconds):
             continue
 
     print(f"[ECU Spamming] Sent {frame_count} frames with ID {config.ID_ECU_PHYSICAL:03X}")
-
-"
-```
