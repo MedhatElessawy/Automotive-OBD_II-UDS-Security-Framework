@@ -1,5 +1,3 @@
-```python
-"
 import obd_attacks      # Module containing OBD attack functions (PID scan, DoS, replay)
 import uds_attacks      # Module containing UDS attack functions (DID/RID scan, MITM, brute force, etc.)
 
@@ -80,5 +78,3 @@ while True:
     # Anything else: ignore and reprint menu
     else:
         pass
-"
-```
