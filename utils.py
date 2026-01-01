@@ -1,5 +1,3 @@
-```python
-"
 # utils.py
 import hmac                    # Used for HMAC-based key derivation in protected_mode
 import hashlib                 # Provides SHA-256 hashing backend for HMAC
@@ -75,5 +73,3 @@ def build_nrc(sid: int, code: int) -> bytes:
     - 0x7F <original SID> <NRC code>
     """
     return bytes([0x7F, sid, code])
-"
-```
