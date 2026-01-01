@@ -1,5 +1,3 @@
-```python
-"
 # tester.py
 import time                 # Timing: delays, timeouts, simple polling windows
 import keyboard             # Global hotkeys (requires elevated privileges on Linux)
@@ -492,5 +490,3 @@ while True:
         OBD()
     elif c == "2":
         UDS()
-"
-```
