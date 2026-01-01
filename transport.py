@@ -1,4 +1,3 @@
-```python
 # transport.py
 import can                                  # python-can: raw CAN send/receive
 import isotp                                # ISO-TP (ISO 15765-2): segmentation/reassembly over CAN
@@ -257,4 +256,3 @@ class TransportManager:
 # Global Instance
 # Purpose: Provide a single shared transport manager object across the project modules.
 tm = TransportManager()
-```
