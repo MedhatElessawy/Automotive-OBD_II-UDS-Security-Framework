@@ -1,5 +1,3 @@
-```python
-"
 # uds_ecu.py
 import time                    # Used for timing (lockout timers, S3 session timeout checks)
 import os                      # Used to check/create the simulated ECU program file on disk
@@ -530,5 +528,3 @@ class UDSHandler:
         self.s3.reset()
         self._send(bytes([sid + 0x40, req[1]]), rxid)
         print("TesterPresent: S3 timer reset")
-"
-```
