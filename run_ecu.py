@@ -1,5 +1,3 @@
-```python
-"
 # run_ecu.py
 from obd_server import OBDHandler      # Handles OBD requests (modes like 0x01, 0x09)
 from uds_server import UDSHandler      # Handles UDS requests (everything else)
@@ -61,5 +59,3 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         # Allow clean stop from Ctrl+C
         print("\nStopping...")
-"
-```
