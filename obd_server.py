@@ -1,4 +1,3 @@
-```python
 # obd_ecu.py
 import time                  # Used to add realistic ECU response delays
 import config                # Holds CAN IDs and ECU-related configuration
@@ -134,4 +133,3 @@ class OBDHandler:
 
         # Final delay after processing all PIDs
         time.sleep(0.05)
-```
