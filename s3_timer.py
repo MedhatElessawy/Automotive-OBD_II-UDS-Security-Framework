@@ -1,4 +1,3 @@
-```python
 # s3_timer.py
 import time                          # Used for time measurement (timeouts, elapsed time)
 import threading                     # Used to run the timer monitoring loop in a background thread
@@ -158,4 +157,3 @@ class S3Timer:
 
             # Sleep/wait until next check, but allow stop_event to interrupt the wait
             self._stop_event.wait(timeout=check_interval)
-```
